@@ -34,7 +34,8 @@ bool Unique(string x)
       cout << j << " & "<< x[i]<< " \n";
       if(trueFalse[j] == true)
 	{
-	  unique = false;  
+	  unique = false; 
+	  break;
 	}
       trueFalse[j]= true; 
     }
