@@ -1,4 +1,4 @@
-Cracking-the-Code-
-==================
+Code-Complete
+=============
 
-Questions from cracking the code attempted in C++ by sean dunford
+Practice questions from the code complete book 
