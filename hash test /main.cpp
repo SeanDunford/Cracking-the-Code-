@@ -8,8 +8,8 @@ int foo(int x);
 int main()
 {
 std::cout << "Yeah you did dat"<<std::endl;
-hash<int> newHash;
-newHash.printVectorContents();
+myNamespace::myHash newHash;
+newHash.printHashName();
 std::cin.get();
 return 0;
 }

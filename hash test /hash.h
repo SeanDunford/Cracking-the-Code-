@@ -2,31 +2,36 @@
 #include <vector>
 
 
-template <class dataTypeClass> class hashItem{
+namespace myNamespace
+{
+
+class hashItem{
 private:
-dataTypeClass* mNextHashItem;
-std::string key;
+hashItem* mNextHashItem;
+std::string mKey;
 public:
 
-hashItem(std::string key);
-hashItem(dataTypeClass &aNextHashItem);
-~hashItem();
+hashItem(std::string key)
+hashItem(hashItem &aNextHashItem)
+~hashItem()
 
-void setNextHashItem(const dataTypeClass* aHashItem);
-void setNextHashItem(const dataTypeClass &aHashItem);
-template <dataTypeClass> void printVectorContents();
+void setNextHashItem(const hashItem* aHashItem)
+void setNextHashItem(const hashItem &aHashItem)
 };
 
 
-template <class dataTypeClass> class hash{
+class myHash{
 private:
-std::vector <dataTypeClass> hashVector;
+std::vector <int> hashVector;
 std::string mName;
 public:
-hash();
-hash(std::string aName);
-~hash();
+myHash()
+myHash(std::string aName)
+~myHash()
 
-void addHashItem(dataTypeClass hashItem, int key);
-int hashFunction(dataTypeClass hashItem);
+void printHashName()
+void addHashItem(hashItem ahashItem, int key)
+int hashFunction(hashItem ahashItem)
+void printVectorContents()
 };
+}
