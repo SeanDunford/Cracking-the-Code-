@@ -1,0 +1,6 @@
+Download my ass1.c file 
+Place it in a local directory
+open up terminal pointing to that directory 
+paste this command into the terminal:
+	"gcc a.c -o a.out; ./a.out;"
+Fin....

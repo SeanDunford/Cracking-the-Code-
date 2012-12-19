@@ -1,0 +1,190 @@
+
+/*
+Sean Dunford
+sdunford
+u66807525
+ass3*/
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdbool.h>
+/*
+
+#define SHMKEY ((key_t) 7890)
+
+
+//struct used as shared memory. //could probably just be an int but struct is the normal procedure so we can encapsulate data
+
+typedef struct
+{
+  int value;
+  bool flag[2]; 
+  int turn; 
+} shared_mem;
+
+shared_mem *total;  // pointer of type shared memory labeld total
+
+
+
+
+
+/*----------------------------------------------------------------------*
+ * This function increases the value of shared variable "total"
+ *  by one all the way to 100000
+ *----------------------------------------------------------------------*/
+
+void process0()
+{
+  	//local process variables
+  int localTotal = 0; 
+  int interuptedCount = 0; 
+  bool runProcess = true; 
+
+
+	//Start Peterson's
+  while(runProcess)
+   {
+    total->flag[0] = true; 
+    total->turn = 1; 
+    if (total->flag[1] == true && total->turn ==1)
+     { 
+      interuptedCount++; 
+      while (total->flag[1] == true && total->turn ==1)
+       {/*busy wait*/
+       }
+     }
+	//crit sec
+    if(total->value <100000)
+     {total->value = total->value + 1;
+	//end crit
+      localTotal++; 
+     }
+	
+    else
+     {runProcess = false;
+      printf ("From Process 1: total = %d\n", localTotal);
+      printf ("Process0 was interrupted %d times\n", interuptedCount);
+     }
+    total->flag[0] = false; 
+
+   }
+}	//End Process0
+
+
+/*----------------------------------------------------------------------*
+ * This function increases the vlaue of shared memory variable "total"
+ *  by one all the way to 100000
+ *----------------------------------------------------------------------*/
+
+void process1()
+{
+  	//local process variables
+  int localTotal = 0; 
+  int interuptedCount = 0; 
+  bool runProcess = true; 
+
+	//Start Peterson's
+  while(runProcess)
+   {
+    total->flag[1] = true; 
+    total->turn = 0; 
+    if (total->flag[0] == true && total->turn ==0)
+     { 
+      interuptedCount++; 
+      while (total->flag[0] == true && total->turn ==0)
+       {/*busy wait*/
+       }
+     }
+	//crit sec
+    if(total->value <100000)
+     {total->value = total->value + 1;
+	//end crit
+      localTotal++; 
+     }
+	
+    else
+     {runProcess = false;
+      printf ("Process1 increased the shared total %d times.\n", localTotal);
+      printf ("Process1 was interrupted %d times\n", interuptedCount);
+     }
+    total->flag[1] = false; 
+   }
+}	//End Process0
+
+
+/*----------------------------------------------------------------------*
+ * MAIN()
+ *----------------------------------------------------------------------*/
+*/
+
+
+main()
+{
+/*  int   shmid;
+  int   pid1;
+  int   pid2;
+  int   ID;
+  int	status;
+
+  char *shmadd;
+  shmadd = (char *) 0;
+
+		/* Create and connect to a shared memory segmentt*/
+
+  if ((shmid = shmget (SHMKEY, sizeof(int), IPC_CREAT | 0666)) < 0)
+    {
+      perror ("shmget");
+      exit (1);
+    }
+		//creates shared mem with 666 - read write permissions and tests to see if it was successful
+
+
+ 
+ if ((total = (shared_mem *) shmat (shmid, shmadd, 0)) == (shared_mem *) -1)
+    {
+      perror ("shmat");
+      exit (0);
+    }
+		// attaches shared memory to main process and tests to see if it was sucessful
+  
+  
+  total->value = 0;
+
+  if ((pid1 = fork()) == 0)
+    {process0();
+     shmdt(shmid); 
+     exit(0); 
+    }
+  if ((pid1 != 0) && (pid2 = fork()) == 0)
+    { process1();
+     shmdt(shmid);
+     exit(0); 
+    }
+  if ((pid1 != 0) && (pid2 != 0))
+    {
+	waitpid(pid1); 
+	printf ("Parent sees process 1 finishing PID: %d\n",pid1);
+	waitpid(pid2);
+	printf ("Parent sees process 2 finishing PID: %d\n",pid2);
+	printf ("Shared mem total->value is equal to: %d\n", total->value);
+        shmdt(shmid);
+
+         if ((shmctl (shmid, IPC_RMID, (struct shmid_ds *) 0)) == -1)//clean up shared mem
+	   {
+	  perror ("shmctl");
+	  exit (-1);
+	    }
+      printf ("\t\t  End of Program.\n");
+    }
+*/
+  printf("Hey Hey Hey"); 
+exit(0);//replaced return with exit to match  
+}
+
+/***** Note:  loop for parent to wait for child processes to finish and print ID of each child*****/
+
+

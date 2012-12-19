@@ -1,0 +1,29 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+
+
+
+int main()
+{
+ bool var = false; 
+ int val = -1; 
+	
+	scanf ("%d", &val); 
+	if(val >= 12 || val < 0)
+		val = 0; 
+	while(!var)
+	{
+		if (val == 12)
+		{
+		  var = true; 
+		}
+	 val++; 
+	}
+	printf("it worked"); 
+return 0; 
+} 
+
+

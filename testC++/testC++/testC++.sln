@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testC++", "testC++\testC++.vcxproj", "{D665EB8A-3BBD-4816-94EA-46CE57FF9B83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D665EB8A-3BBD-4816-94EA-46CE57FF9B83}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D665EB8A-3BBD-4816-94EA-46CE57FF9B83}.Debug|Win32.Build.0 = Debug|Win32
+		{D665EB8A-3BBD-4816-94EA-46CE57FF9B83}.Release|Win32.ActiveCfg = Release|Win32
+		{D665EB8A-3BBD-4816-94EA-46CE57FF9B83}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

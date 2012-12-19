@@ -1,0 +1,35 @@
+- 3 processes 
+	- independently try to increase shmTotal to 600,000
+	- P1 has 100,000 chances
+	- P2 has 200,000 chances
+	- P3 has 300,000 chances 
+- When Shared Mem reaches 600,000 the Process that increased it the last amount should output the final total. 
+
+- Parent process should relase shMem and semaphores then terminate
+- Use wait so parent knows when each process finishes
+- Parent should Print the process ID of each child as the child finishes execution...might not be able to run waitPID
+- Print END OF SIMULATION
+
+Sample Output
+{
+	From Process 1: counter = 100000.
+	From Process 2: counter = 300000.
+	From Process 3: counter = 600000.
+
+	Child with ID 2412 has just exited.
+	Child with ID 2411 has just exited.
+	Child with ID 2413 has just exited.
+
+		        End of  Simulation.
+
+}
+
+- Zip all files 
+- Add readme 
+- COmpile on CS machines
+- IEEE report 
+
+
+http://www.ece.eng.wayne.edu/~gchen/ece5650/lecture5.pdf
+
+Research the semaphore library used in Unix 

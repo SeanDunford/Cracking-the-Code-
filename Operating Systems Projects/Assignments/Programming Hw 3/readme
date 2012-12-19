@@ -1,0 +1,6 @@
+Download my Assignment3SeanDunford.c file 
+Place it in a local directory
+open up terminal pointing to that directory 
+paste this command into the terminal (without the " (double quotes) ":
+	"gcc a.c -o a.out; ./a.out;"
+Fin....

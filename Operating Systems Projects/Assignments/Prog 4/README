@@ -1,0 +1,15 @@
+Please note $(FILENAME) is a placeholder for the user specified filename.
+
+INSTALLATION
+To compile the program, execute the following command:
+gcc final.c -lpthread -lrt -o $(FILENAME)
+
+
+USAGE
+./$(FILENAME)
+Program reads from the text file "mytest.dat" which initially contains arbitrary text.
+
+
+THINGS TO CONSIDER
+The time to run the program is directly proportional to the amount of characters in "mytest.dat"
+			i.e, if mytest.dat has 20 characters, program takes 20 seconds +/- 1 sec to run.
